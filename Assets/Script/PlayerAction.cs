@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
+    public string currentMapName;// transferMap 스크립트에 있는 transferMap 변수의 값을 저장
+    static public PlayerAction instance;
     public GM manager;
     public float Speed;
     float h;
@@ -16,8 +18,18 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
-        rigid = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        if(instance == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            rigid = GetComponent<Rigidbody2D>();
+            anim = GetComponent<Animator>();
+            instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
     }
     void Update()
     {

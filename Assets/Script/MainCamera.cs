@@ -4,9 +4,25 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
+
+    static public MainCamera instance;
     public GameObject player;
     public float speed;
     private Vector3 playerPosition;
+    private void Start() {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+           
+        }
+        else
+        {
+            DontDestroyOnLoad(this.gameObject);
+            instance = this;
+        }
+       
+    }
+
     private void Update()
     {
         if (player.gameObject != null)
