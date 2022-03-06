@@ -15,7 +15,7 @@ public class TalkManager : MonoBehaviour
 
     void GenerateData()
     {
-        talkData.Add(200, new string[] { "Å×½ºÆ®ºôµù?", "Å×½ºÆ®ºôµù!" });
+        talkData.Add(200, new string[] { "ºôµùÀÌ´Ù.", "Å×½ºÆ®ºôµù!" });
     }
     public string GetTalk(int id, int talkIndex)
     {
