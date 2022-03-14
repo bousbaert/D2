@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/basic Scene.unity
     guid: ac3ef99d0a3f60842b4b8adcd4d1837b
   - enabled: 1
-    path: Assets/Scenes/CMAP01.unity
+    path: Assets/Scenes/C/CMAP01.unity
     guid: 58e5da2e9b326f647bafce60c2768c08
   - enabled: 1
-    path: Assets/Scenes/CMAP02.unity
+    path: Assets/Scenes/C/CMAP02.unity
     guid: c959956cb7261934f9494cd54d06aaa3
   m_configObjects: {}
