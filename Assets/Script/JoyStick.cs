@@ -1,57 +1,37 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-public class JoyStick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class JoyStick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public RectTransform handle;
-    public RectTransform outLine;
+    [SerializeField] 
+    private RectTransform lever;
+    private RectTransform rectTransform;
 
-    private float deadZone = 0;
-    private float handleRange = 1;
-    private Vector3 input = Vector3.zero;
-    private Canvas canvas;
+    [SerializeField, Range(10f, 150f)] 
+    private float leverRange;
 
-    public float Horizontal { get { return input.x; } }
-    public float Vertical { get { return input.y; } }
-
-    void Start()
-    {
-        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
-        outLine = gameObject.GetComponent<RectTransform>();
+    private void Awake(){ 
+        rectTransform = GetComponent<RectTransform>(); 
     }
 
- public void OnPointerDown(PointerEventData eventData)
-    {
-        OnDrag(eventData);
-    }
+public void OnBeginDrag(PointerEventData eventData)
+{
+        var inputDir = eventData.position - rectTransform.anchoredPosition;
+        var clampedDir = inputDir.magnitude < leverRange ? inputDir : inputDir.normalized * leverRange; 
+        lever.anchoredPosition = clampedDir;
 
-  public void OnDrag(PointerEventData eventData)
-    {
-        Vector2 radius = outLine.sizeDelta / 3;
-        input = (eventData.position - outLine.anchoredPosition) / (radius * canvas.scaleFactor);
-        HandleInput(input.magnitude, input.normalized);
-        handle.anchoredPosition = input * radius * handleRange;
-    }
-
-    private void HandleInput(float magnitude, Vector2 normalised)
-    {
-        if (magnitude > deadZone)
-        {
-            if (magnitude > 1)
-            {
-                input = normalised;
-            }
-        }
-        else
-        {
-            input = Vector2.zero;
-        }
-    }
-    
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        input = Vector2.zero;
-        handle.anchoredPosition = Vector2.zero;
 
     }
+
+public void OnDrag(PointerEventData eventData)
+{
+        var inputDir = eventData.position - rectTransform.anchoredPosition; 
+        var clampedDir = inputDir.magnitude < leverRange ? inputDir : inputDir.normalized * leverRange;
+        lever.anchoredPosition = clampedDir; 
+
     }
+public void OnEndDrag(PointerEventData eventData)
+{
+        lever.anchoredPosition = Vector2.zero;
+
+    } 
+}
