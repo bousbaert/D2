@@ -11,10 +11,12 @@ public class PlayerAction : MonoBehaviour
     float h;
     float v;
     bool isHorizonMove;
+
     Rigidbody2D rigid;
     Animator anim;
     Vector3 dirVec;
     GameObject scanObject;
+    private JoyStick joystick;
 
     void Awake()
     {
@@ -29,6 +31,7 @@ public class PlayerAction : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        joystick = GameObject.FindObjectOfType<JoyStick>();
 
     }
     void Update()
@@ -87,6 +90,20 @@ public class PlayerAction : MonoBehaviour
             scanObject = rayHit.collider.gameObject;
         }
         else
-            scanObject = null;
+        {
+            scanObject = null; 
+        }
+            
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+        {
+            MoveControl();
+        }
+    }
+    private void MoveControl()
+    {
+        Vector3 upMovement = Vector3.up * Speed * Time.deltaTime * joystick.Vertical;
+        Vector3 rightMovement = Vector3.right * Speed * Time.deltaTime * joystick.Horizontal;
+        transform.position += upMovement;
+        transform.position += rightMovement;
     }
 }
