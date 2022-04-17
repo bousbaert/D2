@@ -7,14 +7,18 @@ using UnityEngine.UI;
 public class GM : MonoBehaviour
 {
     public TalkManager talkManager;
+    public QuestManager questManager;
     public Text talkText;
     public GameObject scanObject;
     public GameObject talkPanel;
     public bool isAciton;
     public int talkIndex;
-   
 
-    
+
+    void Start()
+    {
+        Debug.Log(questManager.CheckQuest());
+    }
     public void Action(GameObject scanObj)
     {
         scanObject = scanObj;
@@ -26,12 +30,15 @@ public class GM : MonoBehaviour
     }
     void Talk(int id, bool isNpc)
     {
-        string talkData = talkManager.GetTalk(id, talkIndex);
 
-        if(talkData == null)
+        int questTalkIndex = questManager.GetQuestTalkIndex(id);
+        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+
+        if (talkData == null)
         {
             isAciton = false;
             talkIndex = 0;
+            Debug.Log(questManager.CheckQuest(id));
             return;
         }
         if (isNpc)
