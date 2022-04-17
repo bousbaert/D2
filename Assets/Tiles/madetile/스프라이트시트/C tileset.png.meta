@@ -109,7 +109,7 @@ TextureImporter:
     second: C12 l1
   - first:
       213: -7393330716791245591
-    second: C tileset_35
+    second: C12 l2
   - first:
       213: 1695474196966145787
     second: C12 l
@@ -991,7 +991,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: C tileset_35
+      name: C12 l2
       rect:
         serializedVersion: 2
         x: 0

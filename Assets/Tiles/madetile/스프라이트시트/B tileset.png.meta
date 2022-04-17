@@ -61,7 +61,7 @@ TextureImporter:
     second: B8 right1
   - first:
       213: -3189632916253583932
-    second: B tileset_19
+    second: B8 right2
   - first:
       213: -401196260063505346
     second: B8 top
@@ -571,7 +571,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B tileset_19
+      name: B8 right2
       rect:
         serializedVersion: 2
         x: 400
