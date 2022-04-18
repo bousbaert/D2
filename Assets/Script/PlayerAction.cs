@@ -66,7 +66,7 @@ public class PlayerAction : MonoBehaviour
             dirVec = Vector3.up;
         else if (vDown && v == -1)
             dirVec = Vector3.down;
-        else if (hDown && v == -1)
+        else if (hDown && h == -1)
             dirVec = Vector3.left;
         else if (hDown && h == 1)
             dirVec = Vector3.right;
