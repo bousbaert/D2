@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: B7 tpillar2
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: bc507f5457cb8c64585b3adf08e0daa5, type: 3}
+  m_DefaultSprite: {fileID: -1396460947016237682, guid: b29567aba92a4c047a5a9885805b75b8, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules: []
