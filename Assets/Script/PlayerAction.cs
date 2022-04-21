@@ -7,6 +7,9 @@ public class PlayerAction : MonoBehaviour
     public string currentMapName;// transferMap 스크립트에 있는 transferMap 변수의 값을 저장
     static public PlayerAction instance;
     public GM manager;
+    public string walkSound_1;
+    public string walkSound_2;
+    private AudioManager theAudio;
     public float Speed;
     float h;
     float v;
@@ -22,7 +25,9 @@ public class PlayerAction : MonoBehaviour
         {
             DontDestroyOnLoad(this.gameObject);
             rigid = GetComponent<Rigidbody2D>();
+            
             anim = GetComponent<Animator>();
+            theAudio = FindObjectOfType<AudioManager>();
             instance = this;
         }
         else
@@ -46,6 +51,7 @@ public class PlayerAction : MonoBehaviour
         else if (vDown||hUp)
             isHorizonMove = false;
 
+
         if (anim.GetInteger("hAxisRaw") != h)
         {
             anim.SetBool("isChange", true);
@@ -59,8 +65,11 @@ public class PlayerAction : MonoBehaviour
         else
         {
             anim.SetBool("isChange", false);
+            
+           
+  
         }
-
+    
 
         if (vDown && v == 1)
             dirVec = Vector3.up;
@@ -73,7 +82,65 @@ public class PlayerAction : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && scanObject != null)
             manager.Action(scanObject);
+        if (hDown)
+        {
+            int temp = Random.Range(1, 2);
+            switch (temp)
+            {
+                case 1:
+                    theAudio.Play(walkSound_1);
+                    break;
+                case 2:
+                    theAudio.Play(walkSound_2);
+                    break;
+            }
+        }
+        if (vDown)
+        {
+            int temp = Random.Range(1, 2);
+            switch (temp)
+            {
+                case 1:
+                    theAudio.Play(walkSound_1);
+                    break;
+                case 2:
+                    theAudio.Play(walkSound_2);
+                    break;
+            }
+        }
+        if (vUp)
+        {
+            int temp = Random.Range(1, 2);
+            switch (temp)
+            {
+                case 1:
+                    theAudio.Play(walkSound_1);
+                    break;
+                case 2:
+                    theAudio.Play(walkSound_2);
+                    break;
+            }
+        }
+        if (hUp)
+        {
+            int temp = Random.Range(1, 2);
+            switch (temp)
+            {
+                case 1:
+                    theAudio.Play(walkSound_1);
+                    break;
+                case 2:
+                    theAudio.Play(walkSound_2);
+                    break;
+            }
+          
+        }
+
+
+
+
     }
+  
      void FixedUpdate()
     {
         Vector2 moveVec = isHorizonMove ? new Vector2(h, 0) : new Vector2(0, v);
