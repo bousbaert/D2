@@ -7,18 +7,18 @@ public class BGMManager : MonoBehaviour {
 
     static public BGMManager instance;
 
+   
+
     public AudioClip[] clips;
 
     private AudioSource source;
 
     private WaitForSeconds waitTime = new WaitForSeconds(0.01f);
-
     private void Awake()
     {
-        if (instance !=null)
+        if (instance != null)
         {
             Destroy(this.gameObject);
-            
         }
         else
         {
@@ -26,6 +26,8 @@ public class BGMManager : MonoBehaviour {
             instance = this;
         }
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
