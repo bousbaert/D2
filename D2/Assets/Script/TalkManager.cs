@@ -17,11 +17,11 @@ public class TalkManager : MonoBehaviour
     {
         talkData.Add(1000, new string[] { "안녕", "난 곰젤리" });
         talkData.Add(2000, new string[] { "안녕.", "난 초밥젤리" });
-        talkData.Add(3000, new string[] { "책상이다." });
-        talkData.Add(4000, new string[] { "나무상자다." });
+        talkData.Add(3000, new string[] { "누군가가 버리고간 책상이다." });
+        talkData.Add(4000, new string[] { "평범한 나무상자다." });
 
         //Quest Talk
-        talkData.Add(10 + 1000, new string[] { "어서 와", "대가대는 처음이지?", "올라가면 있는 초밥젤리가 안내해줄거야" });
+        talkData.Add(10 + 1000, new string[] { "어서 와", "대가대는 처음이지?", "오른쪽으로 가면 있는 초밥젤리가 안내해줄거야" });
         talkData.Add(11 + 2000, new string[] { "반갑다", "학교 안내를 받고싶다고?", "그럼 와사비좀 찾아줘" });
 
         talkData.Add(20 + 1000, new string[] { "와사비?", "그게뭐지?" });

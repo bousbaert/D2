@@ -19,6 +19,7 @@ public class GM : MonoBehaviour
     void Start()
     {
         Debug.Log(questManager.CheckQuest());
+
     }
 
     void Update()
@@ -26,6 +27,7 @@ public class GM : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
             menuSet.SetActive(true);
     }
+
 
     public void Action(GameObject scanObj)
     {
@@ -60,8 +62,10 @@ public class GM : MonoBehaviour
         isAciton = true;
         talkIndex++;
     }
+
     public void GameExit()
     {
         Application.Quit();
     }
+
 }
