@@ -10,7 +10,7 @@ public class ChangeScene : MonoBehaviour
         switch (this.gameObject.name)
         {
             case "StartBtn":
-                SceneManager.LoadScene("Start");
+                SceneManager.LoadScene("basic Scene");
                 break;
             case "LoadBtn":
                 SceneManager.LoadScene("Load");
