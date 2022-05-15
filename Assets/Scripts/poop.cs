@@ -6,12 +6,14 @@ public class poop : MonoBehaviour {
 
     [SerializeField]
     private Animator animator;
-
+    public AudioClip die;
     private Rigidbody2D rigidbody;
-	// Use this for initialization
-	void Start () {
+    AudioSource audioSource;
+    // Use this for initialization
+    void Start () {
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -24,10 +26,13 @@ public class poop : MonoBehaviour {
         {
             MiniGameManager.Instance.Score();
             animator.SetTrigger("poop");
+            GetComponent<AudioSource>().Play();
         }
 
         if (collision.gameObject.tag == "Player")
         {
+            audioSource.clip = die;
+            audioSource.Play();
             MiniGameManager.Instance.GameOver();
             animator.SetTrigger("poop");
         }
