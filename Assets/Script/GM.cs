@@ -9,31 +9,22 @@ public class GM : MonoBehaviour
     public TalkManager talkManager;
     public QuestManager questManager;
     public Text talkText;
-    public Text questText;
     public GameObject scanObject;
     public GameObject talkPanel;
     public GameObject menuSet;
-    public GameObject player;
     public bool isAciton;
     public int talkIndex;
 
 
     void Start()
     {
-        GameLoad();
-        questText.text = questManager.CheckQuest();
+        Debug.Log(questManager.CheckQuest());
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            if(menuSet.activeSelf)
-                menuSet.SetActive(false);
-            else
-                menuSet.SetActive(true);
-        }
-        
+        if(Input.GetButtonDown("Cancel"))
+            menuSet.SetActive(true);
     }
     public void Action(GameObject scanObj)
     {
@@ -68,34 +59,5 @@ public class GM : MonoBehaviour
         isAciton = true;
         talkIndex++;
     }
-    public void GameSave()
-    {
-        PlayerPrefs.SetFloat("PlayerX", player.transform.position.x);
-        PlayerPrefs.SetFloat("PlayerY", player.transform.position.y);
-        PlayerPrefs.SetInt("QustId",questManager.questId);
-        PlayerPrefs.SetInt("QustActionIndex",questManager.questActionIndex);
 
-        menuSet.SetActive(false);
-
-    }
-
-    public void GameLoad()
-    {
-        if (!PlayerPrefs.HasKey("PlayerX"))
-            return;
-
-        float x = PlayerPrefs.GetFloat("PlayerX");
-        float y = PlayerPrefs.GetFloat("PlayerY");
-        int questId = PlayerPrefs.GetInt("QustId");
-        int questActionIndex = PlayerPrefs.GetInt("QustActionIndex");
-
-        player.transform.position = new Vector3(x, y, 0);
-        questManager.questId = questId;
-        questManager.questActionIndex = questActionIndex;
-        questManager.ControlObject();
-    }
-    public void GameExit()
-    {
-        Application.Quit();
-    }
 }
