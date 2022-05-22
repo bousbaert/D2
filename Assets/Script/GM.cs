@@ -21,14 +21,14 @@ public class GM : MonoBehaviour
     void Start()
     {
         GameLoad();
-        questText.text = questManager.CheckQuest();
+       
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            if(menuSet.activeSelf)
+            if (menuSet.activeSelf)
                 menuSet.SetActive(false);
             else
                 menuSet.SetActive(true);
@@ -72,8 +72,8 @@ public class GM : MonoBehaviour
     {
         PlayerPrefs.SetFloat("PlayerX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerY", player.transform.position.y);
-        PlayerPrefs.SetInt("QustId",questManager.questId);
-        PlayerPrefs.SetInt("QustActionIndex",questManager.questActionIndex);
+        PlayerPrefs.SetInt("QustId", questManager.questId);
+        PlayerPrefs.SetInt("QustActionIndex", questManager.questActionIndex);
 
         menuSet.SetActive(false);
 
