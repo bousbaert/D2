@@ -6,9 +6,9 @@ public class MainCamera : MonoBehaviour
 {
 
     static public MainCamera instance;
-    public GameObject player;
-    public float speed;
-    private Vector3 playerPosition;
+    public GameObject player; //카메라가 따라갈 대상
+    public float speed; //카메라 따라가는 속도
+    private Vector3 playerPosition;// 대상의 현재 위치 값
     public BoxCollider2D bound;
 
     private Vector3 minBound; // 박스 컬라이더 영역의 최소 최대 xyz값을 지님
@@ -19,26 +19,20 @@ public class MainCamera : MonoBehaviour
 
     private Camera theCamera;   // 카메라의 반높이값을 구할 속성을 이용하기 위한 변수
 
-    private void Awake()
+    void Start() 
     {
-        if (instance != null)
+        if(instance != null)
         {
             Destroy(this.gameObject);
         }
-        else
-        {
-            DontDestroyOnLoad(this.gameObject);
-            instance = this;
-        }
-    }
-
-    void Start()
-    {
+        else{
+        DontDestroyOnLoad(this.gameObject);
         theCamera = GetComponent<Camera>();
         minBound = bound.bounds.min;
         maxBound = bound.bounds.max;
         halfHeight = theCamera.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
+        }
     }
 
     private void Update()
