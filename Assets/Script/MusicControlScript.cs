@@ -9,7 +9,7 @@ public class MusicControlScript : MonoBehaviour
 
     private void Awake() 
     {
-        DontDestroyOnLoad(this.gameObject);
+      
 
         if (instance == null) 
         {
