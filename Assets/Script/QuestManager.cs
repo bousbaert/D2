@@ -12,6 +12,7 @@ public class QuestManager : MonoBehaviour
     {
         questList = new Dictionary<int, QuestData>();
         GenerateData();
+        
     }
 
 
