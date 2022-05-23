@@ -21,18 +21,18 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
-        if(instance == null)
-        {
+      // if(instance == null)
+      // {
             DontDestroyOnLoad(this.gameObject);
             rigid = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
             audioSource = GetComponent<AudioSource>();
             instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+       // }
+       // else
+       // {
+       //     Destroy(this.gameObject);
+       //  }
 
     }
     void Update()
