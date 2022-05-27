@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: "New Rule Tile - \uBCF5\uC0AC\uBCF8 (11)"
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 78d7ef5e80302fb4b9b44f97d7e865a5, type: 3}
+  m_DefaultSprite: {fileID: 21300000, guid: 3bb0c9ad39dca384e9936a5c2740067f, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules: []
