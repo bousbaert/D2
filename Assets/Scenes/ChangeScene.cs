@@ -12,7 +12,7 @@ public class ChangeScene : MonoBehaviour
             case "StartBtn":
                 SceneManager.LoadScene("basic Scene");
                 break;
-           
+            
             case "ExitBtn":
                 SceneManager.LoadScene("Exit");
                 break;

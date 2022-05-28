@@ -74,6 +74,7 @@ public class GM : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerY", player.transform.position.y);
         PlayerPrefs.SetInt("QustId", questManager.questId);
         PlayerPrefs.SetInt("QustActionIndex", questManager.questActionIndex);
+        PlayerPrefs.Save();
 
         menuSet.SetActive(false);
 
