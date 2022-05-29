@@ -18,11 +18,16 @@ public class QuestManager : MonoBehaviour
 
     void GenerateData()
     {
-        questList.Add(10, new QuestData("성모상", new int[] { 1000, 2000 }));
-        questList.Add(20, new QuestData("과대표", new int[] { 1000, 3000 }));
-        questList.Add(30, new QuestData("체육관", new int[] { 4000,5000 }));
-        questList.Add(40, new QuestData("스트로마톨라이트", new int[] { 6000 }));
-        questList.Add(50, new QuestData("퀘스트 끝", new int[] { 0 }));
+        questList.Add(10, new QuestData("성모상", new int[] { 1000, 2000}));
+        questList.Add(20, new QuestData("과대표", new int[] { 1000, 3000,3000 }));
+        questList.Add(30, new QuestData("체육관", new int[] { 4000,5000}));
+        questList.Add(40, new QuestData("팔각정청설모", new int[] { 6000,7000,7000}));
+        questList.Add(50, new QuestData("A2청설모", new int[] { 8000, 9000}));
+        questList.Add(60, new QuestData("A6청설모", new int[] { 10000 ,11000}));
+        questList.Add(70, new QuestData("A6청설모", new int[] { 12000, 13000 }));
+        questList.Add(80, new QuestData("A6청설모", new int[] { 14000, 15000 }));
+        questList.Add(90, new QuestData("A6청설모", new int[] { 16000 }));
+        questList.Add(100, new QuestData("퀘스트 끝", new int[] { 0 }));
     }
 
     public int GetQuestTalkIndex(int id)
@@ -31,11 +36,13 @@ public class QuestManager : MonoBehaviour
     }
     public string CheckQuest(int id)
     {
+        
 
         if (id == questList[questId].npcId[questActionIndex])
             questActionIndex++;
 
-        
+        ControlObject();
+
 
         if (questActionIndex == questList[questId].npcId.Length)
             NextQuest();
@@ -56,14 +63,11 @@ public class QuestManager : MonoBehaviour
     {
         switch (questId)
         {
-            case 10:
+            case 40:
                 if (questActionIndex == 2)
                     questObject[0].SetActive(true);
                 break;
-            case 20:
-                if (questActionIndex == 1)
-                    questObject[0].SetActive(false);
-                break;
+           
         }
     }
 }
