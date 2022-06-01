@@ -25,6 +25,7 @@ public class TalkManager : MonoBehaviour
         talkData.Add(8000, new string[] { "" });
         talkData.Add(9000, new string[] { "" });
         talkData.Add(10000, new string[] { "" });
+        talkData.Add(11000, new string[] { "" });
         talkData.Add(12000, new string[] { "" });
         talkData.Add(13000, new string[] { "" });
         talkData.Add(14000, new string[] { "" });
