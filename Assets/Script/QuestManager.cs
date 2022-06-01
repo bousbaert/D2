@@ -26,8 +26,8 @@ public class QuestManager : MonoBehaviour
         questList.Add(60, new QuestData("A6청설모", new int[] { 10000 ,11000}));
         questList.Add(70, new QuestData("A6청설모", new int[] { 12000, 13000 }));
         questList.Add(80, new QuestData("A6청설모", new int[] { 14000, 15000 }));
-        questList.Add(90, new QuestData("A6청설모", new int[] { 16000 }));
-        questList.Add(100, new QuestData("퀘스트 끝", new int[] { 0 }));
+        questList.Add(90, new QuestData("퀘스트 끝", new int[] { 0 }));
+       
     }
 
     public int GetQuestTalkIndex(int id)
