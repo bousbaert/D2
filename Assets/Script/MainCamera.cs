@@ -21,18 +21,18 @@ public class MainCamera : MonoBehaviour
 
     void Start() 
     {
-        if(instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else{
-        DontDestroyOnLoad(this.gameObject);
+        //if(instance != null)
+        //{
+        //    Destroy(this.gameObject);
+        //}
+        //else{
+        //DontDestroyOnLoad(this.gameObject);
         theCamera = GetComponent<Camera>();
         minBound = bound.bounds.min;
         maxBound = bound.bounds.max;
         halfHeight = theCamera.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
-        }
+       //}
     }
 
     private void Update()

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerAction : MonoBehaviour
 {
     public string currentMapName;// transferMap 스크립트에 있는 transferMap 변수의 값을 저장
@@ -23,18 +23,20 @@ public class PlayerAction : MonoBehaviour
     {
       // if(instance == null)
       // {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             rigid = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
             audioSource = GetComponent<AudioSource>();
             instance = this;
-       // }
-       // else
-       // {
-       //     Destroy(this.gameObject);
-       //  }
+        
 
-    }
+            // }
+            // else
+            // {
+            //     Destroy(this.gameObject);
+            //  }
+
+        }
     void Update()
     {
         h =manager.isAciton ? 0 : Input.GetAxisRaw("Horizontal");

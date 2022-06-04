@@ -35,7 +35,7 @@ public class MiniGameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Screen.SetResolution(768, 1024, false);
+       
         
     }
 	

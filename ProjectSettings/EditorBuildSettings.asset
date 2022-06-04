@@ -13,8 +13,11 @@ EditorBuildSettings:
     guid: 7fecac7b37dac4a4093d194ba711eae9
   - enabled: 1
     path: Assets/Scenes/basic Scene.unity
-    guid: ac3ef99d0a3f60842b4b8adcd4d1837b
+    guid: df865928fb465ad4c9d4e9c394156583
   - enabled: 1
     path: Assets/Scenes/Exit.unity
     guid: e4f32bc5eb626f1469ce3c508ac53864
+  - enabled: 1
+    path: Assets/Scenes/MiniGame.unity
+    guid: 76e916dc57ccf4e458074dec2e797d95
   m_configObjects: {}

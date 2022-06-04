@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TalkManager : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class TalkManager : MonoBehaviour
         talkData.Add(14000, new string[] { "" });
         talkData.Add(15000, new string[] { "" });
         talkData.Add(16000, new string[] { "여기는 1,2인실이 존재하는 참인재관이야","1층에는 편의시설인 작은마트와 작은카페가 있어.","학교 밖까지 나가기 귀찮다면 여기가 좋아", "이제 학교는 대충 다 둘러봤지?", "이제부턴 혼자 돌아다녀봐~" });
-
+        talkData.Add(17000, new string[] { "" });
 
         //Quest Talk
         talkData.Add(10 + 1000, new string[] { "환영해! 여기는 하양에 위치한 대구가톨릭대학교라고해.","여기는 가톨릭학교이니만큼 학교 안에 성당이 있어.", "그런의미에서 우리 학교 중심에 있는 성모상을 먼저 보고 오도록해!" });
@@ -68,6 +69,18 @@ public class TalkManager : MonoBehaviour
     }
     public string GetTalk(int id, int talkIndex)
     {
+        if (id == 17000)
+        {
+            if (!talkData.ContainsKey(id))
+            {
+                if (!talkData.ContainsKey(id - id % 10))
+                    return GetTalk(id - id % 100, talkIndex);
+                else
+                    return GetTalk(id - id % 10, talkIndex);
+            }
+            SceneManager.LoadScene("MiniGame");
+           
+        }
         if (!talkData.ContainsKey(id))
         {
             if (!talkData.ContainsKey(id - id % 10))
