@@ -19,7 +19,7 @@ public class QuestManager : MonoBehaviour
     void GenerateData()
     {
         questList.Add(10, new QuestData("성모상", new int[] { 1000, 2000}));
-        questList.Add(20, new QuestData("과대표", new int[] { 1000, 3000,3000 }));
+        questList.Add(20, new QuestData("과대표", new int[] { 1000, 3000 }));
         questList.Add(30, new QuestData("체육관", new int[] { 4000,5000}));
         questList.Add(40, new QuestData("팔각정청설모", new int[] { 6000,7000,7000}));
         questList.Add(50, new QuestData("A2청설모", new int[] { 8000, 9000}));
