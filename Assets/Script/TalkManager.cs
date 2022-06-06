@@ -23,16 +23,16 @@ public class TalkManager : MonoBehaviour
         talkData.Add(5000, new string[] { "학교 생활은 좀 어때" });
         talkData.Add(6000, new string[] { "......" });
         talkData.Add(7000, new string[] { "봄이 그렇게도 좋냐~" });
-        talkData.Add(8000, new string[] { "" });
+        talkData.Add(8000, new string[] { "내 도토리 못봤어?" });
         talkData.Add(9000, new string[] { "" });
         talkData.Add(10000, new string[] { "" });
-        talkData.Add(11000, new string[] { "" });
-        talkData.Add(12000, new string[] { "" });
+        talkData.Add(11000, new string[] { "내 도토리 못봤어?" });
+        talkData.Add(12000, new string[] { "냥" });
         talkData.Add(13000, new string[] { "" });
-        talkData.Add(14000, new string[] { "" });
-        talkData.Add(15000, new string[] { "" });
+        talkData.Add(14000, new string[] { "냥" });
+        talkData.Add(15000, new string[] { "......." });
         talkData.Add(16000, new string[] { "여기는 1,2인실이 존재하는 참인재관이야","1층에는 편의시설인 작은마트와 작은카페가 있어.","학교 밖까지 나가기 귀찮다면 여기가 좋아", "이제 학교는 대충 다 둘러봤지?", "이제부턴 혼자 돌아다녀봐~" });
-        talkData.Add(17000, new string[] { "" });
+        talkData.Add(17000, new string[] { "미니게임" });
 
         //Quest Talk
         talkData.Add(10 + 1000, new string[] { "환영해! 여기는 하양에 위치한 대구가톨릭대학교라고해.","여기는 가톨릭학교이니만큼 학교 안에 성당이 있어.", "그런의미에서 우리 학교 중심에 있는 성모상을 먼저 보고 오도록해!" });
@@ -41,8 +41,8 @@ public class TalkManager : MonoBehaviour
         
         talkData.Add(20 + 1000, new string[] { "성녀마리아님은 잘 뵙고왔어?","그 다음 소개할 곳은 B1취창업관이야","여기는 창업에관련된 정보말고도 상담이나 심리검사 등 을 할수있어.", "우선 너는 신입생이니 B7강당에 있는 과대표를 만나고 오도록 해." });
         talkData.Add(21 + 1000, new string[] { "길을 못찾겠다고?","오른쪽 대각선 위로 쭉올라가봐" });
-        talkData.Add(21 + 3000, new string[] { "반갑다 신입생!","여기는 각종 행사와 전시가 진행되는 곳이야.","학교에 대해 좀 더 알고싶으면 B6역사박물관 앞에있는 빨간색 디쿠를 만나보도록." });
-        talkData.Add(22 + 3000, new string[] { "길을 못찾겠다고?","한번 혼자 찾아보는게 어때?","난 바쁜 몸이라"});
+        talkData.Add(21 + 3000, new string[] { "반갑다 신입생!","여기는 각종 행사와 전시가 진행되는 곳이야.","학교에 대해 좀 더 알고싶으면 B6역사박물관 앞에있는 빨간색 디쿠를 만나보도록.","난 바쁘니까 길은 알아서 찾아봐" });
+       
 
         talkData.Add(30 + 4000, new string[] { "왜 이렇게 늦게와써? 기다리다가 2학기 시작하겠다 ", "여기는 학교의 전통과역사를 알 수있는 박물관이야", "학교에 대해 더 궁금하다면 C3체육관 앞에있는 노쿠를 만나도록 해" });
         talkData.Add(31 + 4000, new string[] { "C건물은 도로의 오른쪽으로 쭉가다보면 나올꺼야", "한번 잘 찾아봐" });
