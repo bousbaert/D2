@@ -37,7 +37,7 @@ public class BGMManager : MonoBehaviour {
 
     public void Play(int _playMusicTrack)
     {
-        source.volume = 0.1f;
+        source.volume = 1f;
         source.clip = clips[_playMusicTrack];
         source.Play();
     }

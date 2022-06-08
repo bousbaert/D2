@@ -33,14 +33,10 @@ public class MiniGameManager : MonoBehaviour {
     [SerializeField]
     private GameObject panel;
 
-    private Rigidbody2D pooprb;
-   
-    
-    
 	// Use this for initialization
 	void Start () {
         Screen.SetResolution(768, 1024, false);
-        pooprb = poop.GetComponent<Rigidbody2D>();
+        
     }
 	
 	// Update is called once per frame
@@ -70,7 +66,6 @@ public class MiniGameManager : MonoBehaviour {
         stopTrigger = true;
         StartCoroutine(CreatepoopRoutine());
         panel.SetActive(false);
-        pooprb.gravityScale = 1;
     }
 
     public void Score()
@@ -78,22 +73,6 @@ public class MiniGameManager : MonoBehaviour {
         if(stopTrigger)
         score++;
         scoreTxt.text = "Score : " + score;
-       if (score == 50)
-        {
-            pooprb.gravityScale = 2;
-        }
-        else if (score == 100)
-        {
-            pooprb.gravityScale = 3;
-        }
-        else if (score == 150)
-        {
-            pooprb.gravityScale = 4;
-        }
-        else if (score == 200)
-        {
-            pooprb.gravityScale = 5;
-        }
     }
 
     IEnumerator CreatepoopRoutine()
