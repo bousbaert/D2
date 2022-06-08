@@ -36,15 +36,15 @@ public class TalkManager : MonoBehaviour
 
 
         //Äù½ºÆ®¾ø´Â npc
-        talkData.Add(18000, new string[] { "¾È³ç" });
-        talkData.Add(19000, new string[] { "Hi~" });
-        talkData.Add(20000, new string[] { "¾È³ç~" });
-        talkData.Add(21000, new string[] { "¾È³ç~" });
+        talkData.Add(18000, new string[] { "¾È³ç~","³¯ÀÌÁÁÁö?" });
+        talkData.Add(19000, new string[] { "±æÀ» ÀÒ¾ú´Ù~" });
+        talkData.Add(20000, new string[] { "¾È³ç~ ¹Ý°¡¿ö" });
+        talkData.Add(21000, new string[] { "¼ö¾÷ ´Ê°Ú´Ù..." });
         talkData.Add(22000, new string[] { "¾È³ç~" });
-        talkData.Add(23000, new string[] { "¾È³ç~" });
-        talkData.Add(24000, new string[] { "¾È³ç~" });
-        talkData.Add(25000, new string[] { "¾È³ç~" });
-        talkData.Add(26000, new string[] { "¾È³ç~" });
+        talkData.Add(23000, new string[] { "Á¾°­¸¶·Æ´Ù.." });
+        talkData.Add(24000, new string[] { "¿îµ¿ÀåÀÌ Âü Å©Áö?~" });
+        talkData.Add(25000, new string[] { "¹°ÀÌ ¸¼´Ù.." });
+        
         
 
         //Quest Talk
