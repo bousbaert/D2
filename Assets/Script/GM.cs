@@ -8,10 +8,10 @@ public class GM : MonoBehaviour
 {
     public TalkManager talkManager;
     public QuestManager questManager;
-    public Text talkText;
+    public TypeEffect talk;
     public Text questText;
     public GameObject scanObject;
-    public GameObject talkPanel;
+    public Animator talkPanel;
     public GameObject menuSet;
     public GameObject player;
     public bool isAciton;
@@ -26,11 +26,9 @@ public class GM : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonUp("Cancel"))
         {
             if (menuSet.activeSelf)
-                menuSet.SetActive(false);
-            else
                 menuSet.SetActive(true);
         }
         
@@ -41,15 +39,16 @@ public class GM : MonoBehaviour
         ObjData objData = scanObject.GetComponent<ObjData>();
         Talk(objData.id, objData.isNpc);
 
-        talkPanel.SetActive(isAciton);
+        talkPanel.SetBool("isShow",isAciton);
 
     }
     void Talk(int id, bool isNpc)
     {
-
+        //set talk Data
         int questTalkIndex = questManager.GetQuestTalkIndex(id);
         string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
 
+        //end talk
         if (talkData == null)
         {
             isAciton = false;
@@ -57,13 +56,15 @@ public class GM : MonoBehaviour
             Debug.Log(questManager.CheckQuest(id));
             return;
         }
+
+        //continue
         if (isNpc)
         {
-            talkText.text = talkData;
+            talk.SetMsg(talkData.Split(':')[0]);
         }
         else
         {
-            talkText.text = talkData;
+            talk.SetMsg(talkData);
         }
         isAciton = true;
         talkIndex++;
