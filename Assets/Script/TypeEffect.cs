@@ -44,7 +44,7 @@ public class TypeEffect : MonoBehaviour
         msgText.text = "";
         index = 0;
 
-        interval = 1.0f / CharPerSeconds;
+        interval = 1.2f / CharPerSeconds;
         Debug.Log(interval);
         isAnim = true;
         Invoke("Effecting", interval);
