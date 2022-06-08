@@ -39,7 +39,7 @@ public class MiniGameManager : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        Screen.SetResolution(1280, 720, false);
+        Screen.SetResolution(1920, 1080, false);
         pooprb = poop.GetComponent<Rigidbody2D>();
     }
 	
