@@ -14,7 +14,7 @@ public class ChangeScene : MonoBehaviour
                 break;
             
             case "ExitBtn":
-                SceneManager.LoadScene("Exit");
+                Application.Quit();
                 break;
         }
 

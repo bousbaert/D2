@@ -8,10 +8,10 @@ public class GM : MonoBehaviour
 {
     public TalkManager talkManager;
     public QuestManager questManager;
-    public Text talkText;
+    public TypeEffect talk;
     public Text questText;
     public GameObject scanObject;
-    public GameObject talkPanel;
+    public Animator talkPanel;
     public GameObject menuSet;
     public GameObject player;
     public bool isAciton;
@@ -21,7 +21,8 @@ public class GM : MonoBehaviour
     void Start()
     {
         GameLoad();
-       
+        Screen.SetResolution(1920, 1080, false);
+
     }
 
     void Update()
@@ -41,15 +42,24 @@ public class GM : MonoBehaviour
         ObjData objData = scanObject.GetComponent<ObjData>();
         Talk(objData.id, objData.isNpc);
 
-        talkPanel.SetActive(isAciton);
+        talkPanel.SetBool("isShow",isAciton);
 
     }
     void Talk(int id, bool isNpc)
     {
+        int questTalkIndex = 0;
+        string talkData = "";
 
-        int questTalkIndex = questManager.GetQuestTalkIndex(id);
-        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
-
+        if (talk.isAnim)
+        {
+            talk.SetMsg("");
+            return;
+        }
+        else
+        {
+            questTalkIndex = questManager.GetQuestTalkIndex(id);
+            talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+        }
         if (talkData == null)
         {
             isAciton = false;
@@ -57,13 +67,15 @@ public class GM : MonoBehaviour
             Debug.Log(questManager.CheckQuest(id));
             return;
         }
+        //continue Talk
         if (isNpc)
         {
-            talkText.text = talkData;
+            talk.SetMsg(talkData.Split(':')[0]);
         }
         else
         {
-            talkText.text = talkData;
+            talk.SetMsg(talkData);
+
         }
         isAciton = true;
         talkIndex++;

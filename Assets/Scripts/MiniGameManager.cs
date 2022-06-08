@@ -39,7 +39,7 @@ public class MiniGameManager : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-        Screen.SetResolution(768, 1024, false);
+        Screen.SetResolution(1920, 1080, false);
         pooprb = poop.GetComponent<Rigidbody2D>();
     }
 	
@@ -75,24 +75,25 @@ public class MiniGameManager : MonoBehaviour {
 
     public void Score()
     {
+        double v = pooprb.gravityScale;
         if(stopTrigger)
         score++;
         scoreTxt.text = "Score : " + score;
        if (score == 50)
         {
-            pooprb.gravityScale = 2;
+            v = 1.3;
         }
         else if (score == 100)
         {
-            pooprb.gravityScale = 3;
+            v = 1.6;
         }
         else if (score == 150)
         {
-            pooprb.gravityScale = 4;
+            v = 1.9;
         }
         else if (score == 200)
         {
-            pooprb.gravityScale = 5;
+            v = 2;
         }
     }
 
