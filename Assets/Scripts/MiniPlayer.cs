@@ -10,7 +10,7 @@ public class MiniPlayer : MonoBehaviour {
 
     private SpriteRenderer renderer;
 
-    private float speed = 3;
+    private float speed = 4;
 
     private float horizontal;
 
