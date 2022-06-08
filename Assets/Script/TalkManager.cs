@@ -34,6 +34,19 @@ public class TalkManager : MonoBehaviour
         talkData.Add(16000, new string[] { "여기는 1,2인실이 존재하는 참인재관이야", "1층에는 편의시설인 작은마트와 작은카페가 있어.", "학교 밖까지 나가기 귀찮다면 여기가 좋아", "이제 학교는 대충 다 둘러봤지?", "이제부턴 혼자 돌아다녀봐~" });
         talkData.Add(17000, new string[] { "미니게임" });
 
+
+        //퀘스트없는 npc
+        talkData.Add(18000, new string[] { "안녕" });
+        talkData.Add(19000, new string[] { "Hi~" });
+        talkData.Add(20000, new string[] { "안녕~" });
+        talkData.Add(21000, new string[] { "안녕~" });
+        talkData.Add(22000, new string[] { "안녕~" });
+        talkData.Add(23000, new string[] { "안녕~" });
+        talkData.Add(24000, new string[] { "안녕~" });
+        talkData.Add(25000, new string[] { "안녕~" });
+        talkData.Add(26000, new string[] { "안녕~" });
+        
+
         //Quest Talk
         talkData.Add(10 + 1000, new string[] { "환영해! 여기는 하양에 위치한 대구가톨릭대학교라고해.", "여기는 가톨릭학교이니만큼 학교 안에 성당이 있어.", "그런의미에서 우리 학교 중심에 있는 성모상을 먼저 보고 오도록해!" });
         talkData.Add(11 + 1000, new string[] { "아직 못 만난거야?", "성모상은 이길로 쭉 올라가면 있어." });
