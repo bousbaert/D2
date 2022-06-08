@@ -21,7 +21,8 @@ public class GM : MonoBehaviour
     void Start()
     {
         GameLoad();
-       
+        Screen.SetResolution(1280, 720, false);
+
     }
 
     void Update()
