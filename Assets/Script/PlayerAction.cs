@@ -23,7 +23,7 @@ public class PlayerAction : MonoBehaviour
     {
       // if(instance == null)
       // {
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             rigid = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
             audioSource = GetComponent<AudioSource>();
